@@ -5,4 +5,4 @@ from greatest import greatest
 # Zahlen liefert, welche das größte Produkt besitzen.
 class TestSecond(TestCase):
     def test_greatest(self):
-        self.assertEqual(greatest(), 1)
+        self.assertEqual(greatest(), [5, 5, 7, 6, 6, 8, 9, 6, 6, 4, 8, 9, 5])
