@@ -29,7 +29,7 @@ def send_mail(body):
     # me == my email address
     # you == recipient's email address
     me = "valentinedaycommit@googlemail.com"
-    you = "area51.nils@googlemail.com"
+    you = "sophie.n.walther@googlemail.com"
 
     # Create message container - the correct MIME type is multipart/alternative.
     msg = MIMEMultipart('alternative')
@@ -58,12 +58,14 @@ if __name__ == "__main__":
     import os
     import sys
 
-    all_test = unittest.defaultTestLoader.discover("")
+    all_test = unittest.defaultTestLoader.discover("exercises")
     if unittest.TextTestRunner(verbosity=2).run(all_test).wasSuccessful():
         if os.getenv("CI", "false") == "true":
             newest_tag = get_newest_tag()
             html_site = get_http_from_tag(newest_tag)
             send_mail(html_site)
+
+            print("Sent email.")
 
             sys.exit(0)
     else:
