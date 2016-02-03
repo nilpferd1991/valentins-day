@@ -1,0 +1,2 @@
+def prim(n):
+    pass
