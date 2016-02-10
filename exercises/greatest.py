@@ -1,9 +1,12 @@
 import numpy as np
+import os
 
 
 def greatest():
     product = []
-    f = open('/home/sophie/Projekte/Python/valentins-day/exercises/second.dat', 'r')
+    path = os.path.join(os.path.dirname(__file__), '')
+    print(path)
+    f = open(path + 'second.dat', 'r')
 
     data = f.readline()
     data = data.strip("\n")
